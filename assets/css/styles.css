@@ -192,6 +192,11 @@ section{ position: relative; z-index: 1; }
   min-height: 48px;
 }
 .btn:active{ transform: scale(0.97); }
+.btn:disabled{
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
 .btn-primary{
   background: var(--gradient-gold-static);
   color: #14110a;

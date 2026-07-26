@@ -82,13 +82,17 @@
     });
   });
 
-  /* ---------- Contact form (mailto fallback) ---------- */
+  /* ---------- Contact form (Web3Forms) ---------- */
   var form = document.getElementById("quoteForm");
   if(form){
+    var submitBtn = document.getElementById("quoteSubmit");
+    var submitDefaultText = submitBtn ? submitBtn.textContent : "";
+
     form.addEventListener("submit", function(e){
       e.preventDefault();
       var status = document.getElementById("formStatus");
       var data = new FormData(form);
+
       var required = ["name", "email", "message"];
       var missing = required.filter(function(key){
         var val = data.get(key);
@@ -101,25 +105,39 @@
         return;
       }
 
-      var name = data.get("name");
-      var email = data.get("email");
-      var phone = data.get("phone") || "Not provided";
-      var projectType = data.get("projectType") || "Not specified";
-      var budget = data.get("budget") || "Not specified";
-      var message = data.get("message");
+      if(submitBtn){
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+      }
+      status.className = "form-status";
+      status.textContent = "";
 
-      var body = "Name: " + name + "\nEmail: " + email + "\nPhone: " + phone +
-        "\nProject type: " + projectType + "\nBudget range: " + budget +
-        "\n\nProject details:\n" + message;
-
-      var mailto = "mailto:mat.catalyststudios@gmail.com" +
-        "?subject=" + encodeURIComponent("New Quote Request — " + name) +
-        "&body=" + encodeURIComponent(body);
-
-      window.location.href = mailto;
-
-      status.textContent = "Opening your email app to send this through — if nothing happens, email us directly at mat.catalyststudios@gmail.com.";
-      status.className = "form-status is-visible success";
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: data
+      })
+        .then(function(res){ return res.json(); })
+        .then(function(result){
+          if(result.success){
+            status.textContent = "Thanks — your message is on its way. I'll be in touch within 1–2 business days.";
+            status.className = "form-status is-visible success";
+            form.reset();
+          } else {
+            status.textContent = "Something went wrong sending that. Please try again, or email us directly at mat.catalyststudios@gmail.com.";
+            status.className = "form-status is-visible error";
+          }
+        })
+        .catch(function(){
+          status.textContent = "Something went wrong sending that. Please try again, or email us directly at mat.catalyststudios@gmail.com.";
+          status.className = "form-status is-visible error";
+        })
+        .finally(function(){
+          if(submitBtn){
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitDefaultText;
+          }
+        });
     });
   }
 

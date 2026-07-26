@@ -76,6 +76,10 @@
 
       <div data-reveal>
         <form id="quoteForm" novalidate>
+          <input type="hidden" name="access_key" value="3a72f344-602a-4770-b5ff-141a5491b03d">
+          <input type="hidden" name="subject" value="New Quote Request — Catalyst Studios">
+          <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1" autocomplete="off">
+
           <div class="field-row">
             <div class="field">
               <label for="name">Name <span class="req">*</span></label>
@@ -135,9 +139,9 @@
             <textarea id="message" name="message" required placeholder="What does your business do, and what do you need the website to achieve?"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">Send Quote Request</button>
+          <button type="submit" class="btn btn-primary btn-block" id="quoteSubmit">Send Quote Request</button>
           <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-          <p class="field-hint">This opens your email app with the details pre-filled — nothing is sent until you hit send there.</p>
+          <p class="field-hint">We reply to every enquiry within 1–2 business days.</p>
         </form>
       </div>
 
