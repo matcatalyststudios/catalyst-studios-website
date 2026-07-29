@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partner Programme | Catalyst Studios, Limerick</title>
+<meta name="description" content="Earn 25% commission for every client you refer to Catalyst Studios. Apply to become a Catalyst Partner — no cap on referrals, no complicated tracking.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://catalyststudios.ie/partners.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Catalyst Studios">
+<meta property="og:title" content="Become a Catalyst Partner | 25% Commission">
+<meta property="og:description" content="Refer businesses to Catalyst Studios and earn 25% on every successful project. Apply to join the partner programme.">
+<meta property="og:url" content="https://catalyststudios.ie/partners.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<style>
+  /* ── Partner-specific styles ── */
+  .stat-band {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-5);
+    margin-top: var(--sp-7);
+  }
+  .stat-band-item {
+    text-align: center;
+    padding: var(--sp-5) var(--sp-4);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .stat-band-item .num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: var(--sp-2);
+  }
+  .stat-band-item .label {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--sp-4);
+    margin-top: var(--sp-6);
+  }
+  .who-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: var(--sp-5);
+    display: flex;
+    gap: var(--sp-4);
+    align-items: flex-start;
+    transition: border-color var(--dur-med) var(--ease-out);
+  }
+  .who-card:hover { border-color: var(--border-strong); }
+  .who-icon {
+    flex-shrink: 0;
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: rgba(212,175,55,0.1);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+  }
+  .who-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: var(--sp-1); }
+  .who-card p { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.5; margin: 0; }
+
+  .future-note {
+    margin-top: var(--sp-6);
+    padding: var(--sp-4) var(--sp-5);
+    background: rgba(212,175,55,0.06);
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    display: flex;
+    gap: var(--sp-4);
+    align-items: flex-start;
+  }
+  .future-note-icon {
+    flex-shrink: 0;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+  .future-note p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.6; margin: 0; }
+  .future-note strong { color: var(--ink); }
+
+  .partner-form-wrap { display: grid; grid-template-columns: 1fr 360px; gap: var(--sp-7); align-items: flex-start; }
+
+  .commission-aside {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-strong);
+    border-radius: 16px;
+    padding: var(--sp-6);
+    position: sticky;
+    top: calc(var(--sp-6) + 72px);
+  }
+  .commission-aside .big-num {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: var(--sp-1);
+  }
+  .commission-aside h4 { font-size: 1rem; margin-bottom: var(--sp-4); }
+  .commission-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--sp-3); }
+  .commission-list li {
+    display: flex; gap: var(--sp-3); align-items: flex-start;
+    font-size: 0.875rem; color: var(--ink-soft); line-height: 1.5;
+  }
+  .commission-list li svg { flex-shrink: 0; color: var(--gold); margin-top: 2px; }
+  .commission-divider { border: none; border-top: 1px solid var(--border); margin: var(--sp-5) 0; }
+
+  @media (max-width: 860px) {
+    .stat-band { grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); }
+    .partner-form-wrap { grid-template-columns: 1fr; }
+    .commission-aside { position: static; order: -1; }
+  }
+  @media (max-width: 560px) {
+    .stat-band { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Catalyst Studios — home">
+      <img class="brand-mark" src="assets/images/logo-mark.png" alt="" width="34" height="34"><span class="brand-word">atalyst</span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="work.html" class="nav-link">Work</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="partners.html" class="nav-link">Partners</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="header-cta">
+        <a href="tel:+353833131443" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+          <span>083 313 1443</span>
+        </a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Get a Free Quote</a>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
+      <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="nav-scrim" id="navScrim"></div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Partners</p>
+      <div data-reveal>
+        <p class="eyebrow">Partner Programme</p>
+        <h1>Become a <span class="gold-text">Catalyst Partner.</span></h1>
+        <p class="text-lead" style="margin-top: var(--sp-4); max-width: 62ch;">Turn your audience into an additional income stream. Refer businesses that need a better website — we handle everything else.</p>
+        <div class="hero-actions" style="margin-top: var(--sp-6);">
+          <a href="#apply" class="btn btn-primary">Apply to Partner</a>
+          <a href="#how-it-works" class="btn btn-ghost">How it works</a>
+        </div>
+      </div>
+
+      <div class="stat-band" data-reveal style="--i:1">
+        <div class="stat-band-item">
+          <span class="num">25%</span>
+          <span class="label">Commission on every successful referral</span>
+        </div>
+        <div class="stat-band-item">
+          <span class="num">No cap</span>
+          <span class="label">Unlimited referrals, unlimited earnings</span>
+        </div>
+        <div class="stat-band-item">
+          <span class="num">Zero effort</span>
+          <span class="label">We close the sale, you collect the cheque</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <p class="eyebrow">How It Works</p>
+        <h2>Four steps. You do one of them.</h2>
+        <p class="text-lead">Refer the business, step back, and let us do the rest.</p>
+      </div>
+
+      <div class="grid grid-4" data-reveal-group style="margin-top: var(--sp-7);">
+        <div class="card" data-reveal style="--i:0">
+          <div class="card-icon" style="color: var(--gold);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8.59 13.51l6.83-3.02M8.58 10.49l6.84 3.02M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <p class="eyebrow" style="margin-bottom: var(--sp-1); font-size: 0.75rem;">01</p>
+          <h3>Share</h3>
+          <p>Tell your audience, clients, or network about Catalyst Studios. A message, a post, a mention — however suits you.</p>
+        </div>
+        <div class="card" data-reveal style="--i:1">
+          <div class="card-icon" style="color: var(--gold);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 8l4 4-4 4M3 12h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p class="eyebrow" style="margin-bottom: var(--sp-1); font-size: 0.75rem;">02</p>
+          <h3>Refer</h3>
+          <p>Send them our way. Once the partner platform is live, every partner gets a unique referral link to track their leads precisely.</p>
+        </div>
+        <div class="card" data-reveal style="--i:2">
+          <div class="card-icon" style="color: var(--gold);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.6-4A9 9 0 113.4 18.6 9 9 0 0118.6 5.4z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p class="eyebrow" style="margin-bottom: var(--sp-1); font-size: 0.75rem;">03</p>
+          <h3>We Close</h3>
+          <p>We handle the full sales and delivery process — consultation, design, build, and launch. Nothing is asked of you.</p>
+        </div>
+        <div class="card" data-reveal style="--i:3">
+          <div class="card-icon" style="color: var(--gold);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <p class="eyebrow" style="margin-bottom: var(--sp-1); font-size: 0.75rem;">04</p>
+          <h3>You Get Paid</h3>
+          <p>Earn 25% commission on every project that completes successfully. Paid within 30 days of the client's final payment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHO THIS IS FOR ============ -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Who This Is For</p>
+        <h2>If you know businesses, <span class="gold-text">this is for you.</span></h2>
+        <p class="text-lead">You don't need to know anything about web design. You just need to know people who need one.</p>
+      </div>
+
+      <div class="who-grid" data-reveal-group>
+        <div class="who-card" data-reveal style="--i:0">
+          <div class="who-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <h4>Marketing Consultants & Freelancers</h4>
+            <p>You work with businesses every day but don't offer web design. Send that work our way and earn from it.</p>
+          </div>
+        </div>
+        <div class="who-card" data-reveal style="--i:1">
+          <div class="who-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Accountants, Solicitors & Bookkeepers</h4>
+            <p>Your clients trust your advice. When they ask about getting online, point them to us.</p>
+          </div>
+        </div>
+        <div class="who-card" data-reveal style="--i:2">
+          <div class="who-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 2v6M10 2v6M14 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Content Creators & Social Media Managers</h4>
+            <p>Your audience includes business owners who need a professional online presence. A single post could earn you commission.</p>
+          </div>
+        </div>
+        <div class="who-card" data-reveal style="--i:3">
+          <div class="who-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <div>
+            <h4>Business Coaches & Mentors</h4>
+            <p>You're already helping people build better businesses. Recommending a strong website is the natural next step.</p>
+          </div>
+        </div>
+        <div class="who-card" data-reveal style="--i:4">
+          <div class="who-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 8l4 4-4 4M7 8l-4 4 4 4M14 4l-4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Developers Without Design Skills</h4>
+            <p>You get asked for full websites but only want to write code. Refer the design-and-build jobs here, earn 25% for the introduction.</p>
+          </div>
+        </div>
+        <div class="who-card" data-reveal style="--i:5">
+          <div class="who-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Strong Local Networks</h4>
+            <p>Chamber members, BNI, local business groups — if you know people, you have the audience. That's enough.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="future-note" data-reveal style="margin-top: var(--sp-7);">
+        <div class="future-note-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="16" r="0.5" fill="currentColor" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <p><strong>Unique referral links are coming.</strong> Once the partner platform is live, every approved partner will receive their own tracking link so every referral is attributed automatically. In the meantime, we track introductions manually — just tell us who you're sending our way and we'll handle the rest.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section">
+    <div class="container" style="max-width: 760px;">
+      <div class="section-head center" data-reveal>
+        <p class="eyebrow">Questions</p>
+        <h2>Common questions about the programme.</h2>
+      </div>
+
+      <div class="accordion" data-reveal style="margin-top: var(--sp-6);">
+        <div class="accordion-item is-open">
+          <button class="accordion-trigger" aria-expanded="true">
+            When exactly do I get paid?
+            <span class="accordion-icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-panel"><div class="accordion-panel-inner"><p>Commission is paid out within 30 days of the referred client's final project payment clearing. We'll contact you directly when that happens and arrange the payment — bank transfer, PayPal, or whatever works best for you.</p></div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            What counts as a successful referral?
+            <span class="accordion-icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-panel"><div class="accordion-panel-inner"><p>A referral is successful when the business you introduced signs a project agreement with Catalyst Studios and completes payment. If a referral enquires but doesn't proceed, no commission is due — but we'll let you know either way so you're never left guessing.</p></div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            Is there a limit on how many referrals I can make?
+            <span class="accordion-icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-panel"><div class="accordion-panel-inner"><p>No limit at all. Refer as many businesses as you like — you'll earn 25% on every one that converts. There's no minimum either, so there's no pressure if referrals come in slowly at first.</p></div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            Who is eligible to become a partner?
+            <span class="accordion-icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-panel"><div class="accordion-panel-inner"><p>We're open to anyone with a genuine audience or network of businesses — freelancers, consultants, professionals, creators, or well-connected individuals. We review each application personally and will let you know within a few days of applying.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPLICATION FORM ============ -->
+  <section class="section bg-alt" id="apply">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Apply to Partner</p>
+        <h2>Ready to start earning? <span class="gold-text">Let's talk.</span></h2>
+        <p class="text-lead">Tell us a little about yourself and how you'd share Catalyst Studios. We'll be back in touch within 2 business days.</p>
+      </div>
+
+      <div class="partner-form-wrap" style="margin-top: var(--sp-7);">
+
+        <div data-reveal>
+          <form id="partnerForm" novalidate>
+            <input type="hidden" name="access_key" value="3a72f344-602a-4770-b5ff-141a5491b03d">
+            <input type="hidden" name="subject" value="New Partner Application — Catalyst Studios">
+            <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1" autocomplete="off">
+
+            <div class="field-row">
+              <div class="field">
+                <label for="pName">Full name <span class="req">*</span></label>
+                <input type="text" id="pName" name="name" autocomplete="name" required placeholder="Your name">
+              </div>
+              <div class="field">
+                <label for="pEmail">Email address <span class="req">*</span></label>
+                <input type="email" id="pEmail" name="email" autocomplete="email" required placeholder="you@example.com">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="pHow">How do you plan to promote Catalyst Studios? <span class="req">*</span></label>
+              <textarea id="pHow" name="how_promote" required placeholder="Tell us a little about your audience or network and how you'd introduce people to us — e.g. social media, client referrals, networking events, email newsletters, etc."></textarea>
+            </div>
+
+            <div class="field">
+              <label for="pLink">Your website or social media profile <span style="color:var(--ink-mute); font-weight:400;">(optional)</span></label>
+              <input type="url" id="pLink" name="website_or_social" autocomplete="url" placeholder="https://yoursite.com or @yourhandle">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="partnerSubmit">Send Application</button>
+            <p id="partnerStatus" class="form-status" role="status" aria-live="polite"></p>
+            <p class="field-hint">We review every application personally and reply within 2 business days.</p>
+          </form>
+        </div>
+
+        <div data-reveal style="--i:1">
+          <div class="commission-aside">
+            <div class="big-num">25%</div>
+            <h4>commission on every project you refer</h4>
+            <hr class="commission-divider">
+            <ul class="commission-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                No cap on referrals or earnings
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                No minimum referral requirement
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Paid within 30 days of project completion
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                We do all the work — you just make the intro
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Unique referral links coming soon
+              </li>
+            </ul>
+            <hr class="commission-divider">
+            <p style="font-size:0.8rem; color: var(--ink-mute); line-height:1.5;">Questions before applying? Drop us a line at <a href="mailto:mat.catalyststudios@gmail.com" style="color:var(--gold-light);">mat.catalyststudios@gmail.com</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand" aria-label="Catalyst Studios — home">
+          <img class="brand-mark" src="assets/images/logo-mark.png" alt="" width="34" height="34"><span class="brand-word">atalyst</span>
+        </a>
+        <p style="margin-top: var(--sp-3); font-size: 0.9rem; max-width: 32ch;">Web design &amp; SEO, built in one package. Based in Limerick, working with clients across Ireland.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="partners.html">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="tel:+353833131443">083 313 1443</a></li>
+          <li><a href="mailto:mat.catalyststudios@gmail.com">mat.catalyststudios@gmail.com</a></li>
+          <li><span class="text-mute">Limerick · serving all of Ireland</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Start a Project</h4>
+        <ul>
+          <li><a href="contact.html">Get a Free Quote</a></li>
+          <li><a href="partners.html">Become a Partner</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Catalyst Studios. All rights reserved.</span>
+      <span>Designed &amp; built in Limerick, Ireland.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('partnerForm');
+  var submitBtn = document.getElementById('partnerSubmit');
+  var status = document.getElementById('partnerStatus');
+  var submitDefaultText = 'Send Application';
+
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name = form.querySelector('#pName');
+    var email = form.querySelector('#pEmail');
+    var how = form.querySelector('#pHow');
+
+    if (!name.value.trim() || !email.value.trim() || !how.value.trim()) {
+      status.textContent = 'Please fill in all required fields.';
+      status.className = 'form-status is-visible error';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    status.textContent = '';
+    status.className = 'form-status';
+
+    var data = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    })
+    .then(function (res) { return res.json(); })
+    .then(function (result) {
+      if (result.success) {
+        status.textContent = 'Application sent — we\'ll be in touch within 2 business days.';
+        status.className = 'form-status is-visible success';
+        form.reset();
+      } else {
+        status.textContent = 'Something went wrong. Please try again or email us directly.';
+        status.className = 'form-status is-visible error';
+      }
+    })
+    .catch(function () {
+      status.textContent = 'Unable to send. Please email mat.catalyststudios@gmail.com directly.';
+      status.className = 'form-status is-visible error';
+    })
+    .finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitDefaultText;
+    });
+  });
+})();
+</script>
+</body>
+</html>
